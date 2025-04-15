@@ -8,11 +8,23 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.livestreaming.app"
+      "bundleIdentifier": "com.livestreaming.app",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      }
     },
     "android": {
       "package": "com.livestreaming.app",
-      "permissions": ["CAMERA", "RECORD_AUDIO", "INTERNET"]
+      "permissions": ["CAMERA", "RECORD_AUDIO", "INTERNET"],
+      "config": {
+        "expo": {
+          "video": {
+            "enableHardwareAcceleration": true
+          }
+        }
+      }
     },
     "plugins": [
       [
