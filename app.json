@@ -5,7 +5,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.livestreaming.app",
@@ -13,18 +15,24 @@
         "NSAppTransportSecurity": {
           "NSAllowsArbitraryLoads": true
         }
-      }
+      },
+      "buildNumber": "1"
     },
     "android": {
       "package": "com.livestreaming.app",
-      "permissions": ["CAMERA", "RECORD_AUDIO", "INTERNET"],
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "INTERNET"
+      ],
       "config": {
         "expo": {
           "video": {
             "enableHardwareAcceleration": true
           }
         }
-      }
+      },
+      "versionCode": 1
     },
     "plugins": [
       [
@@ -37,6 +45,16 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "build": {
+          "android": {
+            "gradleCommand": ":app:assembleRelease"
+          }
+        },
+        "projectId": "2a6e4e04-c1f3-47ab-895a-735d5cc4d907"
+      }
+    }
   }
 }
