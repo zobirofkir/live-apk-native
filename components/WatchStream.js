@@ -37,14 +37,19 @@ const WatchStream = ({ stream, onBack }) => {
 
   const onError = (e) => {
     console.log("Video error:", e);
-    setError("فشل تحميل البث");
+    setError("Failed to load stream");
     setIsLoading(false);
   };
 
   return (
     <View style={tw`flex-1 bg-black`}>
-      <View style={tw`absolute top-0 left-0 right-0 z-10 flex-row items-center p-4`}>
-        <TouchableOpacity style={tw`bg-white/30 p-2 rounded-full mr-4`} onPress={onBack}>
+      <View
+        style={tw`absolute top-0 left-0 right-0 z-10 flex-row items-center p-4`}
+      >
+        <TouchableOpacity
+          style={tw`bg-white/30 p-2 rounded-full mr-4`}
+          onPress={onBack}
+        >
           <Text style={tw`text-white`}>Back</Text>
         </TouchableOpacity>
         <Text style={tw`text-white text-xl font-bold`}>{stream.title}</Text>
@@ -67,7 +72,7 @@ const WatchStream = ({ stream, onBack }) => {
                 setIsLoading(true);
               }}
             >
-              <Text style={tw`text-white`}>إعادة المحاولة</Text>
+              <Text style={tw`text-white`}>Retry</Text>
             </TouchableOpacity>
           </View>
         ) : (
